@@ -63,8 +63,9 @@ input {
 }
 
 #searchbox {
+  width: 55%;
   background-color: #F9FAFA;
-  padding-left: 1%;
+  padding-left: 1.455%;
   border-bottom: solid;
 }
 
@@ -341,5 +342,8 @@ footer a {
   #body-pkdex {
     margin: unset;
     border: unset;
+  }
+  #searchbox {
+    width: 91.7%;
   }
 }
