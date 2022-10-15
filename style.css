@@ -49,10 +49,7 @@ i {
   margin-left: 20%;
   margin-right: 20%;
 }
-#searchbox {
-  background-color: #F9FAFA;
-  border-bottom: solid;
-}
+
 .search {
   display: flex;
   background-color: #292B2B;
@@ -60,13 +57,20 @@ i {
   overflow: hidden;
   justify-content: center;
 }
+
+input {
+  all: unset;
+}
+
 .gg-search {
   font-size: 15rem;
   align-self: center;
 }
 
-input {
-  all: unset;
+#searchbox {
+  background-color: #F9FAFA;
+  padding-left: 1%;
+  border-bottom: solid;
 }
 
 .base {
@@ -74,6 +78,7 @@ input {
   height: 4rem;
   overflow: hidden;
 }
+
 .container-pk {
   background: url(../img/bkgrnd.png);
   min-height: 100vh;
@@ -81,6 +86,7 @@ input {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
+  align-content: flex-start;
   justify-content: center;
   position: relative;
   padding-top: 1.244%;
@@ -89,7 +95,7 @@ input {
   padding-right: 0.9455%;
   border-left: solid;
   border-right: solid;
-  border-color: #909494;
+  border-color: #909494;   
 }
 
 .col-pk {

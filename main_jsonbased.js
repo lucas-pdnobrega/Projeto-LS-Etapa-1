@@ -4,11 +4,10 @@
 /* 
 -- NO CASO DE OPTAR POR JSON --
 O que falta?
-  Escrever um JSON englobando uma boa amostra de pokémons
-  Implementar botões de filtro por tipos e geração (Já dá pra matar o reduce/filter)
+  Escrever um 'banco de dados' englobando uma boa amostra de pokémons
+  Implementar botões de filtro por tipos(Já dá pra matar por reduce/filter)
 */
-
-import dex from './json/dex.json' assert { type: 'json' };
+import dex from './json/dex.js'
 
 //FUNÇÃO Construir os parágrafos dos tipos
 function typeBadges(types) {
@@ -65,7 +64,7 @@ function pkSearch() {
 
   //Mapeie cada elemento do querytargets baseado na seguinte função...
   const srch = [...querytargets].map((pokemon) => {
-    //Se o conteúdo do ID ou Nome do pokémon atual corresponder a pelo menos uma parte da pesquisa, poupe-o de virar DANONE
+    //Se o conteúdo do ID ou Nome do pokémon atual corresponder a qualquer parte da pesquisa, poupe-o de virar DANONE
     if ((pokemon.querySelectorAll("p")[0].innerText.indexOf(input) > -1) || (pokemon.querySelectorAll("p")[1].innerText.toLowerCase().indexOf(input) > -1)) {
       pokemon.style.display = ''
     } else {
