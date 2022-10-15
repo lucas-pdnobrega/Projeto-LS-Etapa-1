@@ -7,7 +7,7 @@ O que falta?
   Escrever um 'banco de dados' englobando uma boa amostra de pokémons
   Implementar botões de filtro por tipos(Já dá pra matar por reduce/filter)
 */
-import dex from './json/dex.js'
+import dex from './dex.js'
 
 //FUNÇÃO Construir os parágrafos dos tipos
 function typeBadges(types) {
