@@ -1,5 +1,5 @@
 # Projeto-LS-Etapa-1
-Etapa 1 do Projeto Final da disciplina Linguagens de Script CSTSI 22.1
+Etapa I do Projeto Final da disciplina Linguagens de Script CSTSI 22.2
 
 Equipe :
  - Renato Bezerra de Melo (20221370002)
