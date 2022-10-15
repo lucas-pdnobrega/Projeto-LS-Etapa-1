@@ -62,11 +62,6 @@ input {
   all: unset;
 }
 
-.gg-search {
-  font-size: 15rem;
-  align-self: center;
-}
-
 #searchbox {
   background-color: #F9FAFA;
   padding-left: 1%;
