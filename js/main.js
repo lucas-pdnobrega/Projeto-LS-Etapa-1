@@ -76,6 +76,7 @@ function pkSearch() {
 }
 
 /*
+
   -- VERSÃO SEM MAP ABAIXO --
 
   function pkSearch() {
@@ -92,7 +93,7 @@ function pkSearch() {
     }
   } 
   
-  */
+*/
 
 //FUNÇÃO Escuta por pesquisas na searchbox
 function searchBoxListener() {
@@ -102,6 +103,10 @@ function searchBoxListener() {
       pkSearch()
     }
   })
+}
+
+function addPkm() {
+  console.log('EU EXISTO')
 }
 
 //Inicialização
