@@ -3,7 +3,7 @@ body {
   transition: 0.5s;
   font-family: 'Silkscreen', serif;
   margin: 0;
-  background: url(../img/bkgrnd.png);
+  background: url('https://i.imgur.com/6R0Q1DU.jpeg');
   background-color: rgba(0,0,0,.46);
   background-blend-mode: overlay;
   background-repeat: repeat;
@@ -84,6 +84,7 @@ i {
 .modal-conteudo {
 
   background: url(../img/body_bg.png);
+  background-color: #292B2B;
   color: #f2f2f2;
   
   width: 20rem;
@@ -183,7 +184,7 @@ button:active {
 }
 
 .container-pk {
-  background: url(../img/bkgrnd.png);
+  background: url('https://i.imgur.com/6R0Q1DU.jpeg');
   min-height: 100vh;
   display: flex;
   flex-direction: row;
