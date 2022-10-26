@@ -1,13 +1,9 @@
 //https://www.epidemicjohto.com/t882-type-colors-hex-colors
 //https://www.pokemon.com/us/pokedex/
 
-/* 
--- NO CASO DE OPTAR POR JSON --
-O que falta?
-  Escrever um 'banco de dados' englobando uma boa amostra de pokémons
-  Implementar botões de filtro por tipos(Já dá pra matar por reduce/filter)
-*/
 import dex from './dex.js'
+
+var current_id = [...dex].length
 
 //FUNÇÃO Construir os parágrafos dos tipos
 function typeBadges(types) {
@@ -31,7 +27,7 @@ function idPad(id, size) {
 
 //FUNÇÃO Construir as colunas de Pokémons
 function createPkmn(pokemon) {
-  let Pkmn = `<div class="col-pk">
+  return `<div class="col-pk" id="n${idPad(pokemon.id, 3)}">
               
               <img class="img-pk" src="https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/${idPad(pokemon.id, 3)}.png">
               <p class="id-pk">N°${idPad(pokemon.id, 3)}</p>
@@ -42,7 +38,6 @@ function createPkmn(pokemon) {
               </div>
               
             </div>`
-  return Pkmn
 }
 
 //FUNÇÃO Preencher o HTML dentro do container
@@ -65,35 +60,14 @@ function pkSearch() {
   //Mapeie cada elemento do querytargets baseado na seguinte função...
   const srch = [...querytargets].map((pokemon) => {
     //Se o conteúdo do ID ou Nome do pokémon atual corresponder a qualquer parte da pesquisa, poupe-o de virar DANONE
+    const types = pokemon.querySelectorAll(".types p")
     if ((pokemon.querySelectorAll("p")[0].innerText.indexOf(input) > -1) || (pokemon.querySelectorAll("p")[1].innerText.toLowerCase().indexOf(input) > -1)) {
       pokemon.style.display = ''
     } else {
       pokemon.style.display = 'none'
     }
   })
-  //Após tudo, limpe a searchbox
-  document.getElementById("searchbox").value = ''
 }
-
-/*
-
-  -- VERSÃO SEM MAP ABAIXO --
-
-  function pkSearch() {
-  
-  const input = document.getElementById("searchbox").value.toLowerCase()
-  const querytargets = document.querySelectorAll('.col-pk')
-  //Para cada pokémon dos alvos...
-  /*for (let pokemon of querytargets) {
-    //Verifique se o ID do mesmo ou seu Nome corresponde a pesquisa
-    if ((pokemon.querySelectorAll("p")[0].innerText.indexOf(input) > -1) || (pokemon.querySelectorAll("p")[1].innerText.toLowerCase().indexOf(input) > -1)){
-      pokemon.style.display = ''
-    } else {
-      pokemon.style.display = 'none'
-    }
-  } 
-  
-*/
 
 //FUNÇÃO Escuta por pesquisas na searchbox
 function searchBoxListener() {
@@ -105,10 +79,64 @@ function searchBoxListener() {
   })
 }
 
-function addPkm() {
-  console.log('EU EXISTO')
+function mostrarModal() {
+  const element = document.getElementById("modal");
+  element.classList.add("mostrar-modal");
 }
+
+function esconderModal() {
+  const element = document.getElementById("modal");
+  element.classList.remove("mostrar-modal");
+}
+
+//FUNÇÃO Escuta por cliques no botão adicionar
+function addBtnListener() {
+  const button = document.getElementById("btn-pk")
+  button.addEventListener('click', function(event) {
+    mostrarModal()
+  })
+}
+
+function removerBtnListener() {
+  const button = document.getElementById("esconderModal")
+  button.addEventListener('click', function(event) {
+    esconderModal()
+  })
+}
+
+function confirmBtnListener() {
+  const button = document.getElementById("confirm-pk")
+  button.addEventListener('click', function(event) {
+    current_id += 1
+    const form = document.getElementById('adicionarPKMN');
+    const formData = new FormData(form);
+
+    let newPk = {}
+    let newTypes = []
+    
+    const newNome = formData.get('nome')
+
+    if (formData.get('tipo2') == '') {
+      newTypes = [formData.get('tipo1')]
+    } else {
+      newTypes = [formData.get('tipo1'), formData.get('tipo2')]
+    }
+    
+    newPk.id = current_id
+    newPk.name = newNome
+    newPk.type = newTypes
+    
+    const target = document.querySelector('.container-pk')
+    target.insertAdjacentHTML('beforeend', createPkmn(newPk));
+    esconderModal()
+    document.getElementById(`n${idPad(current_id, 3)}`).scrollIntoView()
+  })
+}
+ 
 
 //Inicialização
 fillHTML()
 searchBoxListener()
+addBtnListener()
+removerBtnListener()
+confirmBtnListener()

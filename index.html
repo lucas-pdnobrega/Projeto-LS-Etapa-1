@@ -14,6 +14,61 @@
 <body>
   
   <div class="container">
+
+      <div class="modal" id="modal">
+        <div class="modal-conteudo">
+          <span id="esconderModal"> &times;</span>
+            <form id="adicionarPKMN">
+              <label >nome</label>
+              <input type="text" id="pkm-name" name="nome">
+              <label>tipos</label>
+              <div class="tipos">
+                <select name="tipo1" class="tipo-adicionado">
+  							      <option id='fire'>fire</option>
+        							<option id="water">water</option>
+        							<option id ="grass">grass</option>
+                      <option id="dark">dark</option>
+                      <option id= "psychic">psychic</option>
+                      <option id="fighting">fighting</option>
+                      <option id="bug">bug</option>
+                      <option id="dragon">dragon</option>
+                      <option id="electric">electric</option>
+                      <option id="fairy">fairy</option>
+                      <option id="flying">flying</option>
+                      <option id="ghost">ghost</option>
+                      <option id="ground">ground</option>
+                      <option id="ice">ice</option>
+                      <option id="normal">normal</option>
+                      <option id="poison">poison</option>
+                      <option id="rock">rock</option>
+                      <option id="steel">steel</option>
+  						      </select>
+                <select name="tipo2" class="tipo-adicionado2">
+                      <option></option>
+  							      <option id='fire'>fire</option>
+        							<option id="water">water</option>
+        							<option id="grass">grass</option>
+                      <option id="dark">dark</option>
+                      <option id="psychic">psychic</option>
+                      <option id="fighting">fighting</option>
+                      <option id="bug">bug</option>
+                      <option id="dragon">dragon</option>
+                      <option id="electric">electric</option>
+                      <option id="fairy">fairy</option>
+                      <option id="flying">flying</option>
+                      <option id="ghost">ghost</option>
+                      <option id="ground">ground</option>
+                      <option id="ice">ice</option>
+                      <option id="normal">normal</option>
+                      <option id="poison">poison</option>
+                      <option id="rock">rock</option>
+                      <option id="steel">steel</option>
+  						      </select>
+              </div>
+              <button id="confirm-pk" type="button">confirmar</button>
+            </form>
+        </div>
+      </div>
     
       <header id="head-pkdex">
         
@@ -27,8 +82,10 @@
       <main id="body-pkdex">
                     
         <div class="search">
-          <button type="button" onclick="addPkm()">Adicionar</button>
-          <input type="text" id="searchbox" placeholder="Pesquisa aqui!">
+          
+          <button id="btn-pk" type="button">adicionar</button>
+          <input type="text" id="searchbox" placeholder="pesquisa aqui!">
+          
         </div>
         
         <div class="container-pk">

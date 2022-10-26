@@ -5,5 +5,5 @@ O Projeto da disciplina tem como objetivo desenvolver um aplicativo de front-end
 
 Equipe :
  - Renato Bezerra de Melo (20221370002)
- - Lucas Palmeira Dantas da Nóbrega (20221370016)
+ - Lucas Palmeira Dantas da Nobrega (20221370016)
  - Samuel Merson Filho (20221370017)

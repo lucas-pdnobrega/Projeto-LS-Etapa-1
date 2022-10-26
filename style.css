@@ -12,7 +12,13 @@ body {
 }
 
 a {
-    all: unset;
+  all: unset;
+}
+
+input {
+  all: unset;
+  border-bottom-style: solid;
+  border-bottom-width: 0.688%;
 }
 
 /*HEAD*/
@@ -28,9 +34,11 @@ header {
   align-items: center;
   justify-content: center;
 }
+
 i {
   color: #f2f2f2;
 }
+
 .navbar-pkdex a {
   float: left;
   color: #f2f2f2;
@@ -50,23 +58,122 @@ i {
   margin-right: 20%;
 }
 
+.modal {
+  position: fixed;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+  
+  background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.42), 
+          rgba(0, 0, 0, 0.42));
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.25s ease-in-out, transform 0.25s ease-in-out, opacity 0.25s ease-in-out, z-index 0.25s ease-in-out;
+    
+}
+
+.modal-conteudo {
+
+  background: url(../img/body_bg.png);
+  color: #f2f2f2;
+  
+  width: 20rem;
+  height: 13rem;
+  
+  border-style: outset;
+  border-radius: 3.6678%;
+  padding: 0.3550rem;
+  margin: 1.244%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: white;
+  padding: 12px 20px;
+  border-radius: 0.5rem;
+  
+}
+
+select {
+  all: unset;
+  background-color: #f2f2f2;
+  color: gray;
+}
+
+.tipos {
+  display: flex;
+  flex-direction: row;
+}
+
+.tipos select {
+  margin-right: 2%;
+}
+
+#adicionarPKMN {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#esconderModal {
+  align-self: flex-end;
+  float: right;
+  width: 20px;
+  cursor: pointer;
+  margin-top: -20px;
+}
+
+#esconderModal:hover {
+  color:gray;
+  
+}
+
+.mostrar-modal{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  z-index: 999;
+}
+
+
 .search {
   display: flex;
   background-color: #292B2B;
   height: 4rem;
   overflow: hidden;
   justify-content: center;
+  padding: 10px
 }
 
-input {
+button {
   all: unset;
+  color: #f2f2f2;
+  background-color: #616161;
+  padding: 1%;
+  margin-right: 30px;
+  border-radius: 4%;
+}
+
+button:active {
+ background-color: #F9FAFA;
+ color: #4F4F4F;
 }
 
 #searchbox {
   width: 55%;
   background-color: #F9FAFA;
   padding-left: 1.455%;
-  border-bottom: solid;
 }
 
 .base {
@@ -125,6 +232,7 @@ input {
   margin: 1.533%;
 }
 
+
 /*
 TIPOS & CÓDIGOS HEXADECIMAIS - REFERÊNCIA
     {
@@ -148,6 +256,7 @@ TIPOS & CÓDIGOS HEXADECIMAIS - REFERÊNCIA
         "Fairy": "#d685ad"
     }
 */
+
 #normal {
   background-color: #a8a77a;
   border-radius: 6.444%;
@@ -163,7 +272,6 @@ TIPOS & CÓDIGOS HEXADECIMAIS - REFERÊNCIA
   width: 6.222rem;
   text-align: center;
 }
-
 #water {
   background-color: #6390f0;
   border-radius: 6.444%;

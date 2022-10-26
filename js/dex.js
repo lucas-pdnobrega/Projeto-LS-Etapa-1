@@ -749,7 +749,6 @@ const dex = [
     name: "Mewtwo",
     type: ["psychic"]
   }
-
   
 ]
 
