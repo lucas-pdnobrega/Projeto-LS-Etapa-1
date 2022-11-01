@@ -60,7 +60,6 @@ function pkSearch() {
   //Mapeie cada elemento do querytargets baseado na seguinte função...
   const srch = [...querytargets].map((pokemon) => {
     //Se o conteúdo do ID ou Nome do pokémon atual corresponder a qualquer parte da pesquisa, poupe-o de virar DANONE
-    const types = pokemon.querySelectorAll(".types p")
     if ((pokemon.querySelectorAll("p")[0].innerText.indexOf(input) > -1) || (pokemon.querySelectorAll("p")[1].innerText.toLowerCase().indexOf(input) > -1)) {
       pokemon.style.display = ''
     } else {
